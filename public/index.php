@@ -1,6 +1,4 @@
 <?php
-echo "ok";
-die;
 /**
  * Created by PhpStorm.
  * User: root
