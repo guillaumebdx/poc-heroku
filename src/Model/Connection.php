@@ -40,9 +40,9 @@ class Connection
     {
         try {
             $this->pdoConnection = new PDO(
-                'mysql:host=' . APP_DB_HOST . '; dbname=' . APP_DB_NAME . '; charset=utf8',
-                APP_DB_USER,
-                APP_DB_PWD
+                'mysql:host=db5000222715.hosting-data.io; dbname=dbs217432; charset=utf8',
+                'dbu442573',
+                'WZRAp33-'
             );
 
             $this->pdoConnection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
