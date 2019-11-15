@@ -63,7 +63,9 @@ class Connection
                 $this->user,
                 $this->password
             );
-
+            var_dump('mysql:host=' . $this->host . '; dbname=' . $this->dbName . '; charset=utf8',
+                $this->user,
+                $this->password);die;
             $this->pdoConnection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
             // show errors in DEV environment
