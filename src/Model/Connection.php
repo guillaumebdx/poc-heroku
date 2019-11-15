@@ -50,7 +50,7 @@ class Connection
             $this->user = getenv('DB_USER');
             $this->host = getenv('DB_HOST');
             $this->password = getenv('DB_PASSWORD');
-            $this->dbName = getenv('DB_DNAME');
+            $this->dbName = getenv('DB_NAME');
         } else {
             $this->user = APP_DB_USER;
             $this->host = APP_DB_HOST;
