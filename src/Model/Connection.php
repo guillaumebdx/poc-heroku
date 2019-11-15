@@ -52,6 +52,9 @@ class Connection
             $this->password = getenv('DB_PASSWORD');
             $this->dbName = getenv('DB_DNAME');
         }
+        var_dump('mysql:host=' . $this->host . '; dbname=' . $this->dbName . '; charset=utf8',
+            $this->user,
+            $this->password);die;
         try {
             $this->pdoConnection = new PDO(
                 'mysql:host=' . $this->host . '; dbname=' . $this->dbName . '; charset=utf8',
