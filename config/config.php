@@ -10,7 +10,7 @@
  */
 
 
-define('APP_DEV', getenv('ENV') === 'prod' ? false : true);
+define('APP_DEV', true);
 
 //Model (for connexion data, see unversionned db.php)
 //VIew
