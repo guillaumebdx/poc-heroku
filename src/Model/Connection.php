@@ -31,13 +31,13 @@ class Connection
      */
     private $pdoConnection;
 
-    private $user = APP_DB_USER;
+    private $user;
 
-    private $host = APP_DB_HOST;
+    private $host;
 
-    private $password = APP_DB_PWD;
+    private $password;
 
-    private $dbName = APP_DB_NAME;
+    private $dbName;
 
     /**
      * Initialize connection
@@ -51,6 +51,11 @@ class Connection
             $this->host = getenv('DB_HOST');
             $this->password = getenv('DB_PASSWORD');
             $this->dbName = getenv('DB_DNAME');
+        } else {
+            $this->user = APP_DB_USER;
+            $this->host = APP_DB_HOST;
+            $this->password = APP_DB_PWD;
+            $this->dbName = APP_DB_NAME;
         }
         try {
             $this->pdoConnection = new PDO(
