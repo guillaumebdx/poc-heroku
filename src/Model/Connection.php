@@ -31,6 +31,14 @@ class Connection
      */
     private $pdoConnection;
 
+    private $user = APP_DB_USER;
+
+    private $host = APP_DB_HOST;
+
+    private $password = APP_DB_PWD;
+
+    private $dbName = APP_DB_NAME;
+
     /**
      * Initialize connection
      *
@@ -38,11 +46,17 @@ class Connection
      */
     public function __construct()
     {
+        if (getenv('ENV') === 'prod') {
+            $this->user = getenv('DB_USER');
+            $this->host = getenv('DB_HOST');
+            $this->password = getenv('DB_PASSWORD');
+            $this->dbName = getenv('DB_DNAME');
+        }
         try {
             $this->pdoConnection = new PDO(
-                'mysql:host=eu-cdbr-west-02.cleardb.net; dbname=heroku_b4c3acd154fa66e; charset=utf8',
-                'b006282433a5aa',
-                'a38386ba'
+                'mysql:host=' . $this->host . '; dbname=' . $this->dbName . '; charset=utf8',
+                $this->user,
+                $this->password
             );
 
             $this->pdoConnection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
